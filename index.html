@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Calculator
+    </title>
+
+    <!-- Favicon Image -->
+
+    <link rel="icon" type="image/png" href="Assets/logo.png">
+
+    <!-- Bootstrap -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet" href="Styles/style.css">
+
+</head>
+
+<body class="bg-dark">
+
+    <main>
+        <div class="container">
+            <h1 class="text-center text-white my-4 fw-bolder">
+                Calculator
+            </h1>
+            <div class="row">
+                <div class="col-12 col-lg-6 my-5 my-lg-0">
+                    <!-- Using Bootstarp Grid Method -->
+                    <h3 class="text-center text-white my-5">
+                        Using Bootstarp Grid Method
+                    </h3>
+                    <div class="calculator">
+                        <div class="screen" id="screen"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-3 p-0">
+                                    <button class="clear" onclick="handleClear()">
+                                        AC
+                                    </button>
+                                </div>
+                                <div class="col-3 p-0">
+                                    <button class="clearOne" onclick="handleClearOne()">
+                                        C
+                                    </button>
+                                </div>
+                                <div class="col-3 p-0">
+                                    <button class="function-btn" value="/" onclick="dis('/')">
+                                        /
+                                    </button>
+                                </div>
+                                <div class="col-3 p-0">
+                                    <button class="function-btn" value="*" onclick="dis('*')">
+                                        *
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3 p-0">
+                                    <button class="function-btn" value="7" onclick="dis('7')">7</button>
+                                </div>
+                                <div class="col-3 p-0">
+                                    <button class="function-btn" value="8" onclick="dis('8')">8</button>
+                                </div>
+                                <div class="col-3 p-0">
+                                    <button class="function-btn" value="9" onclick="dis('9')">9</button>
+                                </div>
+                                <div class="col-3 p-0">
+                                    <button class="function-btn" value="-" onclick="dis('-')">-</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3 p-0">
+                                    <button class="function-btn" value="+" onclick="dis('4')">4</button>
+                                </div>
+                                <div class="col-3 p-0">
+                                    <button class="function-btn" value="+" onclick="dis('5')">5</button>
+                                </div>
+                                <div class="col-3 p-0">
+                                    <button class="function-btn" value="+" onclick="dis('6')">6</button>
+                                </div>
+                                <div class="col-3 p-0">
+                                    <button class="function-btn" value="+" onclick="dis('+')">&nbsp;</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3 p-0">
+                                    <button class="function-btn" value="1" onclick="dis('1')">1</button>
+                                </div>
+                                <div class="col-3 p-0">
+                                    <button class="function-btn" value="2" onclick="dis('2')">2</button>
+                                </div>
+                                <div class="col-3 p-0">
+                                    <button class="function-btn" value="3" onclick="dis('3')">3</button>
+                                </div>
+                                <div class="col-3 p-0">
+                                    <button class="function-btn me-auto d-flex align-items-start justify-content-center"
+                                        value="+" onclick="dis('+')">+</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3 p-0">
+                                    <button class="function-btn" value="0" onclick="dis('0')">0</button>
+                                </div>
+                                <div class="col-3 p-0">
+                                    <button class="function-btn" value="00" onclick="dis('00')">00</button>
+                                </div>
+                                <div class="col-3 p-0">
+                                    <button class="function-btn" value="." onclick="dis('.')">.</button>
+                                </div>
+                                <div class="col-3 p-0">
+                                    <button class="equal-btn" onclick="solve()">=</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 my-5 my-lg-0">
+                    <!-- Using HTML Table method-->
+                    <h3 class="text-center text-white my-5">
+                        Using HTML Table method
+                    </h3>
+                    <div class="calculator">
+                        <div class="screen" id="table-screen"></div>
+                        <table>
+                            <tr>
+                                <td style="width: 25%;" class="clear" onclick="handleClearTable()">AC</td>
+                                <td style="width: 25%;" class="clearOne" onclick="handleClearOneTable()">C</td>
+                                <td onclick="disTable('/')">/</td>
+                                <td onclick="disTable('*')">*</td>
+                            </tr>
+                            <tr>
+                                <td onclick="disTable('7')">7</td>
+                                <td onclick="disTable('8')">8</td>
+                                <td onclick="disTable('9')">9</td>
+                                <td onclick="disTable('-')">-</td>
+                            </tr>
+                            <tr>
+                                <td onclick="disTable('4')">4</td>
+                                <td onclick="disTable('5')">5</td>
+                                <td onclick="disTable('6')">6</td>
+                                <td onclick="disTable('+')" rowspan="2">+</td>
+                            </tr>
+                            <tr>
+                                <td onclick="disTable('1')">1</td>
+                                <td onclick="disTable('2')">2</td>
+                                <td onclick="disTable('3')">3</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td onclick="disTable('0')">0</td>
+                                <td onclick="disTable('00')">00</td>
+                                <td onclick="disTable('.')">.</td>
+                                <td onclick="solveTable()" class="equal-btn">=</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="mt-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <p class="my-2 text-center text-white">
+                        &copy; <span id="date"></span> | All Rights Reserved by <span style="color: #0273ff;font-size: 20px;font-weight: 600;">Ammar</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+
+
+<!-- Bootstrap -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JS -->
+
+<script src="JS/script.js"></script>
+
+
+
+</html>
